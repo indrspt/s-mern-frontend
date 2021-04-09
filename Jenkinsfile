@@ -1,11 +1,11 @@
 env.DOCKER_REGISTRY = 'indraraspati'
 env.DOCKER_IMAGE_NAME = 's-mern-frontend'
 node('master') {
-	stage('s-Mern frontend') {
+    stage('s-Mern frontend') {
       echo 's-Mern frontend'
     }
     stage('Git Clone from Github') {
-        git url: 'https://github.com/indrspt/mern-frontend.git'
+        git url: 'https://github.com/indrspt/s-mern-frontend.git'
     }
     stage('Build Docker Image') {
         sh "docker build -t $DOCKER_REGISTRY/$DOCKER_IMAGE_NAME:${BUILD_NUMBER} ."
